@@ -4,8 +4,7 @@
 
 ShowcaseSERL is a Next.js application designed to showcase various projects with a clean and interactive user interface. The application allows users to filter projects based on different criteria and provides detailed information for each project, including QR codes for quick access.
 
-![Project Screenshot](https://ibb.co/SN5jbgz)  
-This could be an architectural diagram or a screenshot of the application.
+![Project Screenshot](https://i.ibb.co/Jnm1VT9/projectlist.png)  
 
 ## How to Use
 
