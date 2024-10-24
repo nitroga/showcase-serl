@@ -10,7 +10,7 @@ export default function Kiosk() {
   const [projectIndex, setProjectIndex] = useState(0);
   const [showTopBar, setShowTopBar] = useState(true);
   const { Image } = useQRCode();
-  const domain = "http://193.11.186.245:3000"
+  const domain = "DOMAIN GOES HERE"
 
   useEffect(() => {
     fetch("/projects.json")

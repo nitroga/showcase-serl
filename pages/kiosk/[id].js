@@ -11,7 +11,7 @@ export default function KioskStatic() {
   const [project, setProject] = useState(null);
   const [showTopBar, setShowTopBar] = useState(true);
   const { Image } = useQRCode();
-  const domain = "http://193.11.186.245:3000"
+  const domain = "DOMAIN GOES HERE"
 
   useEffect(() => {
     if (id) {
