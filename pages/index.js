@@ -1,131 +1,159 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Head from "next/head";
+import Dropdown from "../src/components/Dropdown";
+import ProjectList from "../src/components/ProjectList";
+import styles from "../src/styles/Home.module.css";
 
 export default function Home() {
+  const intervalTime = 300000; // Interval time in milliseconds - Current: 5 minutes
+  const [types, setTypes] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [selectedType, setSelectedType] = useState(null);
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredProjects, setFilteredProjects] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const searchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const typeChange = (option) => {
+    setSelectedType((prevSelectedType) =>
+      prevSelectedType == option.label ? null : option.label
+    );
+  };
+
+  const tagChange = (option) => {
+    setSelectedTags((prevSelectedTags) => {
+      if (prevSelectedTags.includes(option.label)) {
+        return prevSelectedTags.filter((tag) => tag != option.label);
+      } else {
+        return [...prevSelectedTags, option.label];
+      }
+    });
+  };
+
+  const resetFilters = () => {
+    setSelectedType(null);
+    setSelectedTags([]);
+    setSearchTerm("");
+    fetchProjects();
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(prevState => !prevState);
+  };
+
+  const fetchProjects = () => {
+    fetch("/projects.json")
+      .then((response) => response.json())
+      .then((data) => {
+        let filtered = data.projects;
+
+        if (searchTerm) {
+          filtered = filtered.filter((project) =>
+            project.title.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+        }
+
+        if (selectedType) {
+          filtered = filtered.filter((project) => project.type == selectedType);
+        }
+
+        if (selectedTags.length > 0) {
+          filtered = filtered.filter((project) =>
+            selectedTags.every((tag) => project.tags.includes(tag))
+          );
+        }
+
+        setFilteredProjects(filtered);
+        const { types: types, tags: tags } =
+          extractOptionsFromProjects(filtered);
+        setTypes(types);
+        setTags(tags);
+      })
+      .catch((error) => {
+        console.error("Error fetching projects:", error);
+      });
+  };
+
+  useEffect(() => {
+    fetchProjects();
+    const interval = setInterval(fetchProjects, intervalTime);
+    return () => clearInterval(interval);
+  }, [selectedType, selectedTags, searchTerm]);
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>ShowcaseSERL</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <div className={styles.top}>
+        <div className={styles.topText}>ShowcaseSERL</div>
+          <Link href="/kiosk">
+            <button className={styles.kioskButton}>Kiosk Mode</button>
+          </Link>
+      </div>
 
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className={styles.filterDiv}>
+        <div className={styles.filterTop}>
+          <div className={styles.currentShown}>
+            Showing {filteredProjects.length} projects
+          </div>
+          <button className={styles.resetFilters} onClick={resetFilters}>
+            Reset filters
+          </button>
         </div>
-      </main>
+        <div className={styles.filters}>
+          <input
+            className={styles.search}
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={searchChange}
+          />
+          <Dropdown
+            name="Type"
+            options={types}
+            onChange={typeChange}
+            selectedOption={selectedType}
+          />
+          <Dropdown
+            name="Tags"
+            options={tags}
+            onChange={tagChange}
+            selectedOption={selectedTags}
+          />
+        </div>
+      </div>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+      <ProjectList projects={filteredProjects} />
     </div>
   );
+}
+
+function extractOptionsFromProjects(projects) {
+  const typeAmount = {};
+  const tagAmount = {};
+
+  projects.forEach((project) => {
+    typeAmount[project.type] = (typeAmount[project.type] || 0) + 1;
+    project.tags.forEach((tag) => {
+      tagAmount[tag] = (tagAmount[tag] || 0) + 1;
+    });
+  });
+
+  const sortedTypes = Object.entries(typeAmount)
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([label, number]) => ({ label, number }));
+
+  const sortedTags = Object.entries(tagAmount)
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([label, number]) => ({ label, number }));
+
+  return { types: sortedTypes, tags: sortedTags };
 }

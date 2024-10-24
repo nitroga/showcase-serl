@@ -1,0 +1,93 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Cocos Engine",
+      "description": "Cocos Creator is the new generation of game development tool in Cocos family, it brings a complete set of 3D and 2D features while providing an intuitive, low cost and collaboration friendly workflow to game developers. Cocos Engine is the runtime framework for Cocos Creator editor. Cocos Creator inherited many good qualities and cool features from its previous versions, such as high performance low level C++ implementation, intuitive editor, cross-platform support. It supports native platforms, web platforms and rapidly expanding instant gaming platforms, including Windows, Mac, iOS, Android, HarmonyOS, Web, Facebook Instant Games, WeChat Mini Game and TikTok Mini Games.",
+      "type": "Student",
+      "tags": ["Open Source", "Gamedev", "Engine", "C++"],
+      "screenshots": [
+        "https://user-images.githubusercontent.com/1503156/112012067-d5cdf580-8b63-11eb-819a-1c32cf253b25.png",
+        "https://github.com/cocos/cocos-engine/raw/v3.8.5/ui.png",
+        "https://user-images.githubusercontent.com/1503156/111037166-f27c7600-845d-11eb-988f-4c2c8b5c7321.png"
+      ],
+      "URL": "https://www.cocos.com/en"
+    },
+    {
+      "id": 2,
+      "title": "Electron",
+      "description": "The Electron framework lets you write cross-platform desktop applications using JavaScript, HTML and CSS. It is based on Node.js and Chromium and is used by the Visual Studio Code and many other apps.",
+      "type": "Research",
+      "tags": ["Web Development", "Node.js", "JavaScript", "C++"],
+      "screenshots": [
+        "https://camo.githubusercontent.com/c6a5b63f3d61c2932806c52e77e0650015d890a182ebc9fc977e4d0cbe826d95/68747470733a2f2f656c656374726f6e6a732e6f72672f696d616765732f656c656374726f6e2d6c6f676f2e737667",
+        "https://www.electronjs.org/assets/marketing/fiddle.png"
+      ],
+      "URL": "https://www.electronjs.org/"
+    },
+    {
+      "id": 3,
+      "title": "DiceDB",
+      "description": "DiceDB is an in-memory, real-time, and reactive database with Redis and SQL support optimized for modern hardware and building real-time applications.",
+      "type": "Student",
+      "tags": ["Golang", "Database", "Storage Engine", "Engine", "Hacktober", "Go"],
+      "screenshots": [
+        "https://dicedb.io/icon.png",
+        "https://private-user-images.githubusercontent.com/4745789/364933359-327792c7-d788-47d4-a767-ef2c478d75cb.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjk2MDc4NjcsIm5iZiI6MTcyOTYwNzU2NywicGF0aCI6Ii80NzQ1Nzg5LzM2NDkzMzM1OS0zMjc3OTJjNy1kNzg4LTQ3ZDQtYTc2Ny1lZjJjNDc4ZDc1Y2IuZ2lmP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MTAyMiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDEwMjJUMTQzMjQ3WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YTA2MGJlM2JmNDljNDg0NDAxNmQwZTAwYTMzYTU0MGZlMjQ5OTc2MjEwYWQyMWY2NWI2MGMzODIyNWI4MWI0NSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.ie_GJ1K8zhjLajm9pNDGH2J_xCAlZQi_uHNRJuOJsxc"
+      ],
+      "URL": "https://dicedb.io/"
+    },
+    {
+      "id": 4,
+      "title": "Coqui.ai TTS",
+      "description": "Coqui TTS is a library for advanced Text-to-Speech generation. Pretrained models in +1100 languages. Tools for training new models and fine-tuning existing models in any language. Utilities for dataset analysis and curation.",
+      "type": "Student",
+      "tags": ["AI", "Text-To-Speech", "Deep Learning", "Python"],
+      "screenshots": [
+        "https://raw.githubusercontent.com/coqui-ai/TTS/main/images/coqui-log-green-TTS.png",
+        "https://raw.githubusercontent.com/coqui-ai/TTS/main/images/TTS-performance.png"
+      ],
+      "URL": "https://coqui.ai/"
+    },
+    {
+      "id": 5,
+      "title": "Whisper",
+      "description": "Whisper is a general-purpose speech recognition model. It is trained on a large dataset of diverse audio and is also a multitasking model that can perform multilingual speech recognition, speech translation, and language identification.",
+      "type": "Research",
+      "tags": ["AI", "Automatic Speech Recognition", "Python"],
+      "screenshots": [
+        "https://cdn.prod.website-files.com/644238b1cf656a0846763003/64aee7a04f88801ae3ae7443_34.webp",
+        "https://raw.githubusercontent.com/openai/whisper/main/approach.png",
+        "https://private-user-images.githubusercontent.com/266841/280740425-f4619d66-1058-4005-8f67-a9d811b77c62.svg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjk2MDg0NjgsIm5iZiI6MTcyOTYwODE2OCwicGF0aCI6Ii8yNjY4NDEvMjgwNzQwNDI1LWY0NjE5ZDY2LTEwNTgtNDAwNS04ZjY3LWE5ZDgxMWI3N2M2Mi5zdmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAyMlQxNDQyNDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zOGI3M2EzMTAxY2M0YTgzOTVjNzc2ZDBkOGQ2YjJkMmEwZmMzOTdlMDRiYTNjMTI3NjE3ODA5OGMzM2M5NGE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.QnPy5k7PMvvP6lwRu24Ijrt6rKbSabwODUfG4sJolsQ"
+      ],
+      "URL": "https://openai.com/index/whisper/"
+    },
+    {
+      "id": 6,
+      "title": "MindsDB",
+      "description": "MindsDB is the platform for building AI from enterprise data. With MindsDB, you can deploy, serve, and fine-tune models in real-time, utilizing data from databases, vector stores, or applications, to build AI-powered apps - using universal tools developers already know. MindsDB integrates with numerous data sources, including databases, vector stores, and applications, and popular AI/ML frameworks, including AutoML and LLMs. MindsDB connects data sources with AI/ML frameworks and automates routine workflows between them. By doing so, we bring data and AI together, enabling the intuitive implementation of customized AI systems.",
+      "type": "Research",
+      "tags": ["AI", "Machine Learning", "Database", "Hacktober", "Python"],
+      "screenshots": [
+        "https://github.com/mindsdb/mindsdb/raw/main/docs/assets/mindsdb_logo.jpg",
+        "https://github.com/mindsdb/mindsdb/raw/main/docs/assets/mindsdb_homepage_diagram.png",
+        "https://github.com/mindsdb/mindsdb/raw/main/docs/assets/ai_workflow_automation.png"
+      ],
+      "URL": "https://mindsdb.com/"
+    },
+    {
+      "id": 7,
+      "title": "Hyprland",
+      "description": "Hyprland is a 100% independent, dynamic tiling Wayland compositor that doesn't sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other compositors and more... ",
+      "type": "Student",
+      "tags": ["Compositor", "C++"],
+      "screenshots": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST07C4yum2v2vwvKBBzGLehmFCMcu92U2r3w&s",
+        "https://camo.githubusercontent.com/7b79fc875c1ceb213f4ed3dcb1499da32789b87cc7310b3092e914f05bcb72d2/68747470733a2f2f692e6962622e636f2f433179546230722f66616c662e706e67",
+        "https://camo.githubusercontent.com/b8805970ca251df50b4f57a8912ee9a875cc6f022ec6a05191ef1e7dff837949/68747470733a2f2f6c696e66696e64656c2e6769746875622e696f2f63646e2f687970726c616e642d707265766965772d622e706e67", 
+        "https://camo.githubusercontent.com/10176cdd9f37e27527538a9664128f225090a5e3770b226a9bce66acea1d53c9/68747470733a2f2f692e6962622e636f2f4233474a6732382f32303232313132362d32306835336d3236732d6772696d2e706e67"
+      ],
+      "URL": "https://hyprland.org/"
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This is a React/Next.js application for displaying projects, for example on a TV-kiosk.

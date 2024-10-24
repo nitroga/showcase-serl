@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 97vh;
+  width: 58vw;
+  margin: auto;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.top {
+  height: 4vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 5px;
+}
+
+.topText {
+  font-size: 22px;
+  margin-left: 5px;
+}
+
+.kioskButton {
+  width: auto;
+  height: 3vh;
+  cursor: pointer;
+  background: none;
+  padding: 0 0.5vw;
+  font-size: 1.6vh;
+  font-weight: bold;
+  border: 0.1vh solid rgba(0, 0, 0, 0.37);
+  border-radius: 0.5vh;
+}
+
+.kioskButton:hover {
+  background: rgb(220, 220, 220);
+}
+
+.filterDiv {
+  height: auto;
+  border-top: 0.3vh solid rgba(0, 0, 0, 0.8);
+  border-bottom: 0.3vh solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.filterTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.currentShown, .resetFilters {
+  font-size: 14.5px;
+  border: none;
+}
+
+.resetFilters  {
+  background: none;
+}
+
+.resetFilters:hover {
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.search {
+  flex: 2.5;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+@media (max-height: 800px) {
+  .top {
+    height: 5vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .top {
+    height: 8vh;
+  }
+  .settings {
+    height: 5vh;
+    width: 5vh;
+  }
+  .menu {
+    right: 4vw;
+  }
+}

@@ -1,0 +1,166 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 97vh;
+  width: 58vw;
+  margin: auto;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.top {
+  height: 4vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 5px;
+}
+
+.topText {
+  font-size: 22px;
+  margin-left: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.kioskButton {
+  width: 6vw;
+  height: 2.2vh;
+  cursor: pointer;
+  background: none;
+  padding: 0 0.5vw;
+  font-size: 1.6vh;
+  font-weight: bold;
+  border: 0.1vh solid rgba(0, 0, 0, 0.37);
+  border-radius: 0.5vh;
+  margin-bottom: 0.2vh;
+}
+
+.kioskButton:hover {
+  background: rgb(220, 220, 220);
+}
+
+.titleAndType {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  border-top: 2.5px solid black;
+  border-bottom: 2.5px solid black;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.title {
+  font-size: 3.5vh;
+  margin-bottom: 0.5vh;
+}
+
+.projectType {
+  font-weight: bold;
+  border: 0.1vh solid rgba(0, 0, 0, 0.37);
+  padding: 0.3vh 0.4vw;
+  border-radius: 0.5vh;
+}
+
+.project {
+  height: 90vh;
+  padding: 1vh 0 1vh 0;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.6vh;
+  margin: 4px;
+  padding: 1vw;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: row;
+  height: 18vh;
+}
+
+.projectDetails {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.projectTags {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 0.6vh;
+}
+
+.tag {
+  font-weight: bold;
+  border: 0.1vh solid rgba(0, 0, 0, 0.37);
+  padding: 0.3vh 0.4vw;
+  border-radius: 0.5vh;
+}
+
+.projectDescription {
+  font-size: 1.15rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.qrCode {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  margin-left: 5px;
+}
+
+.qrCode img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.border {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.4);
+  margin: 5px;
+}
+
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 10px;
+  margin-top: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.screenshotImage {
+  width: 100%;
+  max-height: 30vh;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .screenshots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .screenshots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .screenshots {
+    grid-template-columns: 1fr
+  }
+}
